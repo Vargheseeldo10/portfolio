@@ -1,6 +1,6 @@
 import React from "react";
-import { FaCss3, FaFigma, FaHtml5, FaJs, FaReact, FaJava } from "react-icons/fa";
-import { SiRedis, SiMysql, SiSpringboot, SiFirebase, SiGit, SiGithub, SiHibernate, SiVisualstudiocode, SiApache } from "react-icons/si";
+import { FaCss3, FaHtml5, FaJs, FaReact, FaJava } from "react-icons/fa";
+import { SiMysql, SiFirebase, SiGit, SiGithub, SiHibernate, SiVisualstudiocode, SiApache } from "react-icons/si";
 
 const Experience = () => {
   const skills = [
@@ -9,16 +9,15 @@ const Experience = () => {
     { icon: FaReact, color: "#61DAFB", name: "React.js" },
     { icon: FaJs, color: "#F7DF1E", name: "JavaScript" },
     { icon: FaJava, color: "#007396", name: "Java" },
-   
     { icon: SiMysql, color: "#4479A1", name: "MySQL" },
     { icon: SiFirebase, color: "#FFCA28", name: "Firebase" },
     { icon: SiGit, color: "#F05032", name: "Git" },
     { 
       icon: SiGithub, 
-      color: "#181717", 
+      color: "white", 
       name: "GitHub",
-      className: "github-skill", 
-      link: "https://github.com/yourusername" 
+      className: "bg-black rounded-full p-1",
+      link: "https://github.com/Vargheseeldo10" 
     },
     { icon: SiApache, color: "#D22128", name: "Maven" }, 
     { icon: SiHibernate, color: "#59666C", name: "Hibernate" },
@@ -48,39 +47,48 @@ const Experience = () => {
   ];
 
   return (
-    <div id="Experience" className="p-10 md:p-24">
-      <h1 className="text-2xl md:text-4xl text-white font-bold mb-10">Experience</h1>
-      <div className="flex flex-wrap items-center justify-around">
+    <div id="Experience" className="px-6 py-12 md:px-24 md:py-16">
+      <h1 className="text-3xl md:text-4xl text-white font-bold mb-8 md:mb-12">Experience</h1>
+      
+      <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
         {/* Skills Section */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:w-2/5 md:p-12 py-10">
-          {skills.map((skill, index) => (
-            <span 
-              key={index} 
-              className="p-3 bg-zinc-950 flex items-center justify-center rounded-2xl tooltip"
-              title={skill.name}
-            >
-              <skill.icon color={skill.color} size={50} />
-            </span>
-          ))}
+        <div className="w-full lg:w-2/5">
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
+            {skills.map((skill, index) => (
+              <div
+                key={index}
+                className={`group relative p-3 bg-zinc-900 hover:bg-zinc-800 flex items-center justify-center rounded-xl transition-all duration-300 cursor-pointer ${skill.className || ''}`}
+                title={skill.name}
+              >
+                <skill.icon 
+                  color={skill.color} 
+                  className="w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-110" 
+                />
+                <span className="absolute bottom-full mb-2 hidden group-hover:block bg-zinc-800 text-white text-xs px-2 py-1 rounded-md">
+                  {skill.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Experience Section */}
-        <div className="md:w-1/2">
+        <div className="w-full lg:w-3/5 space-y-6 md:space-y-8">
           {experiences.map((exp, index) => (
             <div 
-              key={index} 
-              className="flex gap-10 bg-slate-950 bg-opacity-45 mt-4 rounded-lg p-4 items-center"
+              key={index}
+              className="relative bg-zinc-900 bg-opacity-70 rounded-xl p-6 md:p-8 transition-all duration-300 hover:bg-opacity-80 border border-zinc-800 hover:border-zinc-600"
             >
-              <span className="text-white">
-                <h2 className="text-xl font-semibold leading-tight">{exp.role}</h2>
-                <h3 className="text-md text-gray-300 mb-2">{exp.company}</h3>
-                <p className="text-sm text-gray-400 mb-2">{exp.period}</p>
-                <ul className="text-sm pl-4 list-disc">
-                  {exp.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="mb-1">{detail}</li>
-                  ))}
-                </ul>
-              </span>
+              <div className="md:absolute top-6 right-6 text-sm text-zinc-400 mb-2 md:mb-0">
+                {exp.period}
+              </div>
+              <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">
+                {exp.role}
+              </h2>
+              <h3 className="text-md md:text-lg text-zinc-300 mb-4">
+                {exp.company}
+              </h3>
+             
             </div>
           ))}
         </div>
