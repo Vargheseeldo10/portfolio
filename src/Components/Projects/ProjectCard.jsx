@@ -9,18 +9,18 @@ const ProjectCard = ({
 }) => {
   const handleExternalDemo = () => {
     if (demoLink) {
-      window.open(demoLink, '_blank', 'noopener,noreferrer');
+      window.location.href = demoLink;
     }
   };
 
   const handleExternalSourceCode = () => {
     if (sourceCodeLink) {
-      window.open(sourceCodeLink, '_blank', 'noopener,noreferrer');
+      window.location.href = sourceCodeLink;
     }
   };
 
   return (
-    <div className="p-3 md:p-6 flex flex-col w-full sm:w-80 bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full">
+    <div className="p-3 md:p-6 flex flex-col w-full md:w-1/2 bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full">
       <img 
         className="p-4 w-full h-48 object-cover rounded-lg" 
         src={bannerImage} 
