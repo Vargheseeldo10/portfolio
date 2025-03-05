@@ -8,7 +8,7 @@ const ProjectCard = ({
   sourceCodeLink 
 }) => {
   return (
-    <div className="p-3 md:p-6 flex flex-col w-full md:w-full bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full max-w-[700px]">
+    <div className="p-3 md:p-6 flex flex-col w-[calc(100%+2.2rem)] sm:w-full md:w-full bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full max-w-[700px]">
       <img 
         className="p-4 w-full h-64 object-cover rounded-lg" 
         src={bannerImage} 
