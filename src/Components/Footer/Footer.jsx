@@ -31,9 +31,9 @@ const Footer = () => {
       id="Footer"
       className="bg-[#465697] text-white py-12 px-4 md:px-16"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+      <div className="max-w-6xl mx-auto flex flex-col items-center space-y-8">
         {/* Contact Header */}
-        <div className="text-center md:text-left">
+        <div className="text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-2">Contact</h1>
           <p className="text-sm md:text-xl font-light opacity-80">
             Feel free to reach out!
@@ -41,8 +41,9 @@ const Footer = () => {
         </div>
 
         {/* Contact Links */}
-        <div className="w-full md:w-auto">
-          <ul className="space-y-4">
+        <div className="w-full">
+          {/* Desktop View: Full Links */}
+          <ul className="hidden md:block space-y-4">
             {contactLinks.map((link, index) => (
               <li 
                 key={index}
@@ -60,6 +61,19 @@ const Footer = () => {
               </li>
             ))}
           </ul>
+
+          {/* Mobile View: Icons Only */}
+          <div className="flex md:hidden justify-center space-x-4">
+            {contactLinks.map((link, index) => (
+              <div 
+                key={index}
+                className="p-3 bg-white/10 rounded-full cursor-pointer transition-all duration-300 hover:bg-white/20"
+                onClick={() => handleLinkClick(link.href)}
+              >
+                {link.icon}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
