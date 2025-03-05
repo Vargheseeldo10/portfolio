@@ -20,7 +20,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="p-3 md:p-6 flex flex-col w-[calc(100%+1.4rem)] sm:w-80 bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full">
+    <div className="p-3 md:p-6 flex flex-col w-[calc(100%+3rem)] sm:w-80 bg-[#0c0e19] shadow-xl shadow-slate-900 rounded-2xl h-full">
       <img 
         className="p-4 w-full h-48 object-cover rounded-lg" 
         src={bannerImage} 
