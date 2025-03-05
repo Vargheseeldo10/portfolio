@@ -15,14 +15,14 @@ const Projects = () => {
     },
     {
       title: "Instagram Clone",
-      main: "An Instagram-like social media app with responsive UI using HTML, CSS, and JavaScript.",
+      main: "An Instagram-like social media app with responsive UI using HTML, CSS, and JavaScript.Designed with a mobile-first approach, ensuring a smooth experience across all devices.",
       bannerImage: bannerImg2,
       demoLink: "https://instaclone0varghese.netlify.app/",
       sourceCodeLink: "https://github.com/Vargheseeldo10/instagram-clone"
     },
     {
       title: "Interior-V",
-      main: "Make your interior look good with Interior-V, a modern interior design website built with HTML, CSS, and JavaScript.",
+      main: "Transform your living spaces with Interior-V, a sleek and modern interior design website crafted using HTML, CSS, and JavaScript. Designed for a seamless user experience.",
       bannerImage: bannerImg3,
       demoLink: "https://interior-v.netlify.app/",
       sourceCodeLink: "https://github.com/Vargheseeldo10/Interior-v"
@@ -32,9 +32,9 @@ const Projects = () => {
   return (
     <div id="Projects" className="p-10 md:p-24 text-white">
       <h1 className="text-2xl md:text-4xl text-white font-bold">Projects</h1>
-      <div className="py-12 px-8 flex flex-col items-center gap-8">
+      <div className="py-12 px-8 flex flex-col md:flex-row items-center gap-8">
         {projectsData.map((project, index) => (
-          <ProjectCard
+          <ProjectCard 
             key={index}
             title={project.title}
             main={project.main}
