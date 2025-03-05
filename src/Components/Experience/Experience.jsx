@@ -52,11 +52,11 @@ const Experience = () => {
       <h1 className="text-2xl md:text-4xl text-white font-bold mb-10">Experience</h1>
       <div className="flex flex-wrap items-center justify-around">
         {/* Skills Section */}
-        <div className="flex flex-wrap md:w-2/5 gap-8 md:p-12 py-10">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 md:w-2/5 md:p-12 py-10">
           {skills.map((skill, index) => (
             <span 
               key={index} 
-              className="p-3 bg-zinc-950 flex items-center rounded-2xl tooltip"
+              className="p-3 bg-zinc-950 flex items-center justify-center rounded-2xl tooltip"
               title={skill.name}
             >
               <skill.icon color={skill.color} size={50} />
